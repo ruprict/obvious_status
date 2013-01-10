@@ -3,7 +3,10 @@ require 'obvious'
 require_relative '../entities/status'
 
 class StatusJackContract < Contract
-  contracts :save, :get, :list, :remove
+  
+  def self.contracts 
+    [:save, :get, :list, :remove]
+  end
 
   def save_contract input
     input_shape = Status.shape

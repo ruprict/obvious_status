@@ -2,7 +2,10 @@ require 'obvious'
 require_relative '../entities/user'
 
 class UserJackContract < Contract
-  contracts :save, :get, :list
+
+  def self.contracts 
+    [:save, :get, :list]
+  end
 
   def save_contract input
     input_shape = User.shape
